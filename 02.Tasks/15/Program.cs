@@ -6,5 +6,5 @@ if(number > 0 && number < 8)
 }
 else
 {
-    Console.WriteLine($"цивра {number} не является днем недели");
+    Console.WriteLine($"цифра {number} не является днем недели");
 }
