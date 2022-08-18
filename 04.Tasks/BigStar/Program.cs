@@ -1,9 +1,9 @@
-﻿int Fuct (int number)
+﻿double Fuct (double number)
 {
-    int sum = number;
+    double sum = number;
     if(number >= 0)
     {
-        for(int i = 1; i < number; i++)
+        for(double i = 1; i < number; i++)
         {
         sum = i * sum;
         }
@@ -11,7 +11,7 @@
     }
     else 
     {
-        for(int i = -1; i > number; i--)
+        for(double i = -1; i > number; i--)
         {
             sum = i * sum;
         }
@@ -20,15 +20,15 @@
 }
 
 //Введите массив одной строкой, разделяя элементы пробелом, запятой или точкой:
-Console.WriteLine("Enter array by one line seperating by space, comma or dot: ");
+Console.WriteLine("Enter array in one line seperating by space, comma or dot: ");
 string? str = Console.ReadLine();
 string digs = string.Empty;
 Console.Write("[");
-for(int i = 0; i < str.Length; i++)
+for(int i = 0000; i < str.Length; i++)
 {
     if(str[i] == 44 || str[i] == 32 || str[i] == 46 )
     {
-        Console.Write(Fuct(Convert.ToInt32(digs)));
+        Console.Write(Fuct(Convert.ToDouble(digs)));
         if(i < str.Length-1) Console.Write(", ");
         digs = string.Empty;
     }
@@ -37,5 +37,5 @@ for(int i = 0; i < str.Length; i++)
         digs = digs+str[i];
     }
 }
-Console.Write(Fuct(Convert.ToInt32(digs)));
+Console.Write(Fuct(Convert.ToDouble(digs)));
 Console.Write("]");
