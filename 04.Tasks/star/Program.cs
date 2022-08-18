@@ -20,7 +20,7 @@
 }
 
 //Введите массив одной строкой, разделяя элементы пробелом, запятой или точкой:
-Console.WriteLine("Enter array in one line seperating by space, comma or dot: ");
+Console.WriteLine("Enter array in one line seperating elements by space, comma or dot: ");
 string? str = Console.ReadLine();
 Console.Write("[");
 for(int i = 0; i < str.Length; i++)
