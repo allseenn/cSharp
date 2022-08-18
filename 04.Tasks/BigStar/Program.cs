@@ -29,7 +29,7 @@ for(int i = 0000; i < str.Length; i++)
     if(str[i] == 44 || str[i] == 32 || str[i] == 46 )
     {
         Console.Write(Fuct(Convert.ToDouble(digs)));
-        if(i < str.Length-1) Console.Write(". ");
+        if(i < str.Length-1) Console.Write("; ");
         digs = string.Empty;
     }
     if(str[i] <= 57 && str[i] >= 48) 
