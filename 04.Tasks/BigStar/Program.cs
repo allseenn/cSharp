@@ -25,7 +25,7 @@ string? str = Console.ReadLine();
 string digs = string.Empty;
 double sign = 1;
 Console.Write("[");
-for(int i = 0000; i < str.Length; i++)
+for(int i = 0; i < str.Length; i++)
 {
     if(str[i] == '-')
     {
