@@ -1,7 +1,6 @@
 ﻿Console.Write("Enter a number: ");
 string? number = Console.ReadLine();
-int sum = 0;
-int error = 0;
+int sum = 0, error = 0;
 for(int i = 0; i <= number.Length-1; i++) 
 {
     if(number[i] == 45)
@@ -9,13 +8,13 @@ for(int i = 0; i <= number.Length-1; i++)
         i++;
         sum = sum - (number[i]-48);
     }
-    else if(number[i] < 57 && number[i] > 48 && number[i] != 45)
+    else if(number[i] <= 57 && number[i] >= 48 && number[i] != 45)
     {
-        sum = sum + (number[i]-48);
+        sum = sum + (number[i] - 48);
     }
     else
     {
-        error = 1;
+        error++;
     }
 }
 if(error == 0)
@@ -24,5 +23,5 @@ if(error == 0)
 }
 else
 {
-    Console.WriteLine($"Error, {number} contains symbols!");
+    Console.WriteLine($"Your number contains {error} error!");
 }
