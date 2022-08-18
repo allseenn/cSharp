@@ -26,13 +26,20 @@ string digs = string.Empty;
 Console.Write("[");
 for(int i = 0000; i < str.Length; i++)
 {
-    if(str[i] == 44 || str[i] == 32 || str[i] == 46 )
+    if(str[i] == 44 || str[i] == 32 || str[i] == 46)
     {
+        if(str[i-1] == 44 || str[i-1] == 32 || str[i-1] == 46)
+        {
+            digs = string.Empty;
+        }
+        else
+        {
         Console.Write(Fuct(Convert.ToDouble(digs)));
         if(i < str.Length-1) Console.Write("; ");
         digs = string.Empty;
+        }
     }
-    if(str[i] <= 57 && str[i] >= 48) 
+    else if(str[i] <= 57 && str[i] >= 48) 
     {
         digs = digs+str[i];
     }
