@@ -25,7 +25,7 @@ string? str = Console.ReadLine();
 string? digs = string.Empty;
 double sign = 1;
 Console.Write("[");
-for(int i = 0000; i < str.Length; i++)
+for(int i = 0; i < str.Length; i++)
 {
     if(str[i] == 45)
     {
@@ -41,9 +41,9 @@ for(int i = 0000; i < str.Length; i++)
         }
         else
         {
-        Console.Write(Fuct(Convert.ToDouble(digs)*sign));
-        if(i < str.Length-1) Console.Write("; ");
-        digs = string.Empty;
+            Console.Write(Fuct(Convert.ToDouble(digs)*sign));
+            if(i < str.Length-1) Console.Write("; ");
+            digs = string.Empty;
         }
     }
     else if(str[i] <= 57 && str[i] >= 48) 
