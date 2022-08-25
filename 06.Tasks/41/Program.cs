@@ -11,4 +11,4 @@ if (!string.IsNullOrEmpty(M))
 return count;
 }
 
-Console.WriteLine($"{NumbersAboveZero()} numbers without zero.");
+Console.WriteLine($"{NumbersAboveZero()} numbers more than zero.");
