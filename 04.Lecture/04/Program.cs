@@ -4,7 +4,7 @@
     else return Fibonacci(n-1) + Fibonacci(n-2);
 }
 
-for(int i = 1; i < 40; i++)
+for(int i = 1; i < 3; i++)
 {
     Console.WriteLine(Fibonacci(i));
 }
