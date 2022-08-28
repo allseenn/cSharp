@@ -5,16 +5,35 @@
 // 5 9 2 3
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+void PrintColorGreen(string print)
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
+void PrintColorBlue(string print)
+{
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
+void PrintColorRed(string print)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
 int m = new Random().Next(3,10);
 int n = new Random().Next(3,10);
 int[,] arr = new int[m,n];
 Console.Write("№ |\t");
-Console.ForegroundColor = ConsoleColor.Green;
 for (int x = 0; x < n; x++)
 {
-    Console.Write($"{x}\t");
+    PrintColorGreen($"{x}\t");
 }
-Console.ResetColor();
 Console.WriteLine();
 for (int x = 0; x < n; x++)
 {
@@ -28,9 +47,7 @@ for (int i = 0; i < m; i++)
         arr[i,j] = new Random().Next(0,10);
         if(j == 0) 
         {
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Write($"{i} ");
-            Console.ResetColor();
+            PrintColorBlue($"{i} ");
             Console.Write("|\t");
         }
         Console.Write(arr[i,j] + "\t");
@@ -43,8 +60,6 @@ for (int x = 0; x < n; x++)
 }
 Console.WriteLine();
 Console.Write("AV|\t");
-
-Console.ForegroundColor = ConsoleColor.Red;
 double sum = 0;
 for (int y = 0; y < n; y++)
 {
@@ -53,9 +68,7 @@ for (int y = 0; y < n; y++)
         sum = sum + arr[x,y];
         
     }
-    Console.Write($"{Math.Round(sum/m,2)}\t");
+    PrintColorRed($"{Math.Round(sum/m,2)}\t");
     sum = 0;
 }
-Console.ResetColor();
 Console.WriteLine();
- 

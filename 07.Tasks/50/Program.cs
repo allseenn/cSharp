@@ -5,6 +5,27 @@
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
+void PrintColorGreen(string print)
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
+void PrintColorBlue(string print)
+{
+    Console.ForegroundColor = ConsoleColor.DarkBlue;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
+void PrintColorRed(string print)
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write(Convert.ToString(print));
+    Console.ResetColor();
+}
+
 Console.Write("Enter row number: ");
 int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter column number: ");
@@ -14,16 +35,14 @@ int m = new Random().Next(3,10);
 int n = new Random().Next(3,10);
 int[,] arr = new int[m,n];
 Console.Write("№ |");
-Console.ForegroundColor = ConsoleColor.Green;
 for (int x = 0; x < n; x++)
 {
- Console.Write($"{x} ");
+    PrintColorGreen($"{x} ");
 }
-Console.ResetColor();
 Console.WriteLine();
 for (int x = 0; x < n; x++)
 {
- Console.Write($"---");
+    Console.Write($"---");
 }
 Console.WriteLine();
 for (int i = 0; i < m; i++)
@@ -33,9 +52,7 @@ for (int i = 0; i < m; i++)
         arr[i,j] = new Random().Next(0,10);
         if(j == 0) 
         {
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Write($"{i} ");
-            Console.ResetColor();
+            PrintColorBlue($"{i} ");
             Console.Write("|");
         }
         
@@ -43,9 +60,7 @@ for (int i = 0; i < m; i++)
         { 
             result[0] = arr[i,j];
             result[1] = 1;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write(arr[i,j] + " ");
-            Console.ResetColor();
+            PrintColorRed(arr[i,j] + " ");
         }
         else Console.Write(arr[i,j] + " ");
     }
@@ -54,31 +69,15 @@ for (int i = 0; i < m; i++)
 Console.WriteLine();
 if(result[1] == 1) 
 {
-    Console.Write($"Row ");
-    Console.ForegroundColor = ConsoleColor.DarkBlue;
-    Console.Write(row);
-    Console.ResetColor();
-    Console.Write(" column ");
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.Write(column);
-    Console.ResetColor();
-    Console.Write(" -> ");
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine(result[0]);
-    Console.ResetColor();
+    PrintColorBlue($"Row {row}");
+    PrintColorGreen($" column {column}");
+    Console.Write(" ->");
+    PrintColorRed($" {result[0]}");
 }
 else 
 {
-        Console.Write($"Row ");
-    Console.ForegroundColor = ConsoleColor.DarkBlue;
-    Console.Write(row);
-    Console.ResetColor();
-    Console.Write(" column ");
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.Write(column);
-    Console.ResetColor();
-    Console.Write(" -> ");
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("No such element");
-    Console.ResetColor();
+    PrintColorBlue($"Row {row}");
+    PrintColorGreen($" column {column}");
+    Console.Write(" ->");
+    PrintColorRed(" No such elements");
 }
