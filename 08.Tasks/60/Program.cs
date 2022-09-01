@@ -25,30 +25,41 @@ void PrintColorRed(string print)
     Console.Write(Convert.ToString(print));
     Console.ResetColor();
 }
+int[] RandList()
+{
+    int[]arr = new int[90];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = i+10;
+    }
+    int temp;
+    int k = 0;
+    for (int j = 0; j < arr.Length; j++)
+    {   
+        k = new Random().Next(0, 90);
+        temp = arr[j];
+        arr[j] = arr[k];
+        arr[k] = temp;
+    }   
+    return (arr);
+}
 
 int[,,] FillArrayX3IntRand(int rowMin, int rowMax, int digitMin, int digitMax)
 {
     int m = new Random().Next(rowMin, rowMax);
     int n = new Random().Next(rowMin, rowMax);
     int z = new Random().Next(rowMin, rowMax);
-    Random a = new Random(); 
-    List<int> randomList = new List<int>();
-    int MyNumber = 0;
-
+    int [] rand = RandList();
+    int countRand = 0;
     int[,,] arr = new int[m, n, z];
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
             for (int k = 0; k < z; k++)
-            {   MyNumber = a.Next(digitMin, digitMax);
-                //arr[i, j, k] = new Random().Next(digitMin, digitMax);
-                if (!randomList.Contains(MyNumber))
-                {
-                    randomList.Add(MyNumber);
-                    arr[i, j, k] = MyNumber;
-                }
-                else arr[i, j, k] = MyNumber+i+k+j;
+            {   
+                arr[i, j, k] = rand[countRand];
+                countRand++;
             }
         }
     }
