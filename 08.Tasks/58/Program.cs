@@ -47,15 +47,15 @@ void PrintArrayX2(int[,] arr)
 {
     int row = arr.GetLength(0);
     int column = arr.GetLength(1);
-    Console.Write("№ | ");
+    Console.Write("№ |\t");
     for (int x = 0; x < column; x++)
     {
-        PrintColorGreen($"{x}  ");
+        PrintColorGreen($"{x}\t");
     }
     Console.WriteLine();
     for (int x = 0; x < column; x++)
     {
-        Console.Write($"-----");
+        Console.Write($"---------");
     }
     Console.WriteLine();
     for (int i = 0; i < row; i++)
@@ -65,11 +65,11 @@ void PrintArrayX2(int[,] arr)
             if (j == 0)
             {
                 PrintColorBlue($"{i} ");
-                Console.Write("| ");
+                Console.Write("|\t");
             }
-            Console.Write(arr[i, j] + "  ");
+            Console.Write(arr[i, j] + "\t");
         }
-        Console.WriteLine();
+        Console.WriteLine("\n  |");
     }
     Console.WriteLine();
 }
@@ -97,9 +97,11 @@ int[,] Multiply(int[,] array1, int[,] array2)
   
     return arr;
 }  
-
-int[,] array1 = FillArrayX2IntRand(3,3,0,9);
-int[,] array2 = FillArrayX2IntRand(3,3,0,9);
+Console.WriteLine("How long side of matrix do you wish?");
+Console.Write("Enter a number: ");
+int side = Convert.ToInt32(Console.ReadLine());
+int[,] array1 = FillArrayX2IntRand(side,side,0,9);
+int[,] array2 = FillArrayX2IntRand(side,side,0,9);
 PrintColorRed("\nFirst matrix\n\n");
 PrintArrayX2(array1);
 PrintColorRed("Second matrix\n\n");
