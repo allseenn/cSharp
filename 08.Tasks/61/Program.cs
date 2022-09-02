@@ -107,5 +107,4 @@ int[] PascalRowArrayX1(int N, int rowLen)
 Console.Write("Pascals triangular, enter row N: ");
 int pascalN = Convert.ToInt32(Console.ReadLine());
 int[,] array = FillArrayX2IntZero(pascalN);
-int[,] pascal = FillArrayX2Pascal(array);
-PrintArrayX2(pascal);
+PrintArrayX2(FillArrayX2Pascal(array));
